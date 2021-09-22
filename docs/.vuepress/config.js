@@ -15,7 +15,7 @@ module.exports = {
         text: '标签'      // 默认文案 “标签”
       },
       socialLinks: [     // 信息栏展示社交信息
-        { icon: 'reco-github', link: 'https://github.com/recoluan' },
+        { icon: 'reco-github', link: 'https://github.com/helptome1' },
       ]
     },
     nav: [
@@ -52,7 +52,7 @@ module.exports = {
     lastUpdated: "Last Updated",
     author: "hezg",             //版权信息
     authorAvatar: "/avatar.png",//头像信息
-    record: "xxxx",             //备案信息
+    record: "hezg's blog",             //备案信息
     startYear: "2021"           //开始年份
   }
 }

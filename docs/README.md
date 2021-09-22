@@ -6,7 +6,7 @@ heroImage: /avatar.png #首页显示的主图，默认被注释，取消注释�
 heroImageStyle: { # 首页主图的样式控制，默认被注释
   maxWidth: '200px',
   width: '100%',
-  display: block,
+  display: block, 
   margin: '9rem auto 2rem',
   background: '#fff',
   borderRadius: '1rem',
