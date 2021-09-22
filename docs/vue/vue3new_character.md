@@ -231,7 +231,7 @@ export default {
 
 打印一下输出结果
 
-![image]()
+![image](/vue3newfeature/a.png)
 
 **注意：**  这里指的 `.value` 是在 `setup` 函数中访问 `ref` 包装后的对象时才需要加的，在 `template` 模板中访问时是不需要的，因为在编译时，会自动识别其是否为 `ref` 包装过的
 
@@ -329,13 +329,13 @@ export default {
 
 **ref：** 
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9utEicJNics1SciakZTyBOeh5TBS8dWVaM0BicVZbaaYXETreXNGyecjvmQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+![](/vue3newfeature/5.ref.gif)
 
 可以看到，在对响应式数据的值进行 `+1` 操作后，视图改变了，原始值未改变，响应式数据对象的值也改变了，这说明 `ref` 是对原数据的一个**拷贝** ，不会影响到原始值，同时响应式数据对象值改变后会同步更新视图
 
 **toRef：** 
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9Yo6jfXCOicNzbiaAyXzSlhFXiciaNEhv1R1SN5ibKCFY8PuJrzHHlx0icDDw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+![](/vue3newfeature/5.toref.gif)
 
 可以看到，在对响应式数据的值进行 `+1` 操作后，视图未发生改变，原始值改变了，响应式数据对象的值也改变了，这说明 `toRef` 是对原数据的一个**引用** ，会影响到原始值，但是响应式数据对象值改变后会不会更新视图
 
@@ -374,7 +374,7 @@ export default {
 
 打印结果如下：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9w2eWI9ib9iclDk2j4FwvwNWAiavvCQpXpn7Zru7ibhicCERJRAwrTIE9YrQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![torefs](/vue3newfeature/6.torefs.png)
 
 返回的是一个对象，对象里包含了每一个包装过后的响应式数据对象
 
@@ -412,7 +412,7 @@ export default {
 
 来看一下打印结果：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9e5NLlmIKrt5r9lDKUuPPicicIH0qqcDaQx83X2EibIJbNo7GiaZTIs5fGA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![shallowReactive](/vue3newfeature/7.shadowreact(1).png)
 
 设想一下如果一个对象层级比较深，那么每一层都用 `Proxy` 包装后，对于性能是非常不友好的
 
@@ -446,7 +446,7 @@ export default {
 
 输出结果：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9dKD8d354PNmIb34SC0WQ9sdaOOXia2Oe1LPW6GJsNsA0xbVmllh89xg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![shallowReactive](/vue3newfeature/7.shadowreact(2).png)
 
 结果非常的明了了，只有第一层被 `Proxy` 处理了，也就是说只有修改第一层的值时，才会响应式更新，代码如下：
 
@@ -493,7 +493,7 @@ export default {
 
 来看一下具体过程：
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9Z2muBCWzMsflhq0WzfzxnN7CiceGeC7PTiagKhRVgicA67cLibxY4W1s9Q/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+![shallowReactive](/vue3newfeature/7.shadowreact.gif)
 
 首先我们点击了第二个按钮，改变了第二层的 `b` 和第三层的 `c`，虽然值发生了改变，但是视图却没有进行更新；
 
@@ -561,18 +561,13 @@ export default {
 }
 </script>
 ```
-
-
-
-https://mmbiz.qpic.cn/mmbiz_png/zPh0erYjkib2jq4qWHbzUvbLt7c1vTDq9t9O5QeLCYhicIxlIEJ1DNticpuibPtszCdDXQBlSrCfFNb5Xuj1BkIC8w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1
-
 首先看一下被 `shallowRef` 包装过后是怎样的结构
 
-![](image/b.png)
+![shallowRef](/vue3newfeature/8.shallowRef.png)
 
 然后再来看看改变其值会有什么变化。
 
-![](image/a.gif)
+![shallowRef](/vue3newfeature/8.shallowRef.gif)
 
 我们先点击了第二个按钮，发现数据确实被改变了，但是视图并没随之更新；
 
@@ -624,7 +619,7 @@ export default {
 
 我们来看一下具体过程：
 
-![](image/c.gif)
+![shallowRef](/vue3newfeature/8.shallowRef(2).gif)
 
 可以看到，我们没有给 `.value` 重新赋值，只是在修改值后，调用了 `triggerRef` 就实现了视图的更新
 
@@ -667,7 +662,7 @@ export default {
 
 来看看具体过程
 
-![](image/d.gif)
+![toRaw](/vue3newfeature/9.toraw.gif)
 
 我们改变了 `reactive` 对象中的数据，于是看到原始数据 `obj` 和被 `reactive` 包装过的对象的值都发生了变化，由此我们可以看出，这两者是一个引用关系
 
@@ -741,6 +736,6 @@ export default {
 
 我们来看一下在被 `markRaw` 方法处理过后的数据是否还能被 `reactive` 包装成响应式数据
 
-![](image/e.gif)
+![markRaw](/vue3newfeature/10.gif)
 
 从图中可以看到，即使我们修改了值也不会更新视图了，即没有实现数据响应式。
