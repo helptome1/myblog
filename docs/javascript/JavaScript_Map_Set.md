@@ -1,4 +1,11 @@
-# JS对象Map()和Set()
+---
+title: JavaScript中的Map和Set
+date: 2021-11-9
+categories:
+ - JavaScript
+tags:
+ - JavaScript
+---
 
 # JS对象Map()和Set()
 
@@ -408,10 +415,3 @@ let union=new Set（[...a，..b]）；
 1et difference=new Set（[.…a].filter（x=>lb.has（x）））；
 //Set{1}
 ```
-
-
-
-
-
-
-
