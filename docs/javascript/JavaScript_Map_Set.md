@@ -7,6 +7,11 @@ tags:
  - JavaScript
 ---
 
+
+::: tip 
+介绍Js中数据结构的Map和Set方法
+:::
+
 # JS对象Map()和Set()
 
 在ES6新的标准中，加入了Map()和Set()方法。

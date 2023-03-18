@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Welcome to my world  #首页居中显示的文本
+heroText: Welcome to my Blog  #首页居中显示的文本
 tagline: 一个记录成长的Blog   # 首页显示的标语
 heroImage: /avatar.png #首页显示的主图，默认被注释，取消注释可显示图片
 heroImageStyle: { # 首页主图的样式控制，默认被注释
