@@ -2,6 +2,7 @@ module.exports = {
   title: "一筐杂学",
   description: "我的前端成长日记",
   theme: 'reco',
+  base: '/blog/',
   themeConfig: {
     // type设置网站类型
     type: 'blog',

@@ -7,6 +7,9 @@ tags:
  - vue3
 ---
 
+<!-- ::: warning 注意
+首先本文摘抄之微信公众号：前端大全，4月29号文章《快速使用Vue3最新的15个常用API》。感谢大佬的精彩讲述，作为学习，copy到博客，用以记录！
+::: -->
 
 ::: tip 
 本文会频繁地对比Vue2来介绍Vue3，也将对各个API结合代码实例讲解，这既是对自己知识的总结，也希望能帮助到大家。
@@ -228,7 +231,7 @@ export default {
 
 打印一下输出结果
 
-![image](/vue3newfeature/a.png)
+<img :src="$withBase('/vue3newfeature/a.png')" alt="foo">
 
 **注意：**  这里指的 `.value` 是在 `setup` 函数中访问 `ref` 包装后的对象时才需要加的，在 `template` 模板中访问时是不需要的，因为在编译时，会自动识别其是否为 `ref` 包装过的
 
@@ -275,7 +278,7 @@ export default {
         const obj = {count: 3}
         // 2. 将 obj 对象中属性count的值转化为响应式数据
         const state = ref(obj.count)
-
+ 
         // 3. 将ref包装过的数据对象返回供template使用
         return {state}
     }
@@ -326,13 +329,17 @@ export default {
 
 **ref：** 
 
-![](/vue3newfeature/5.ref.gif)
+<!-- ![](/vue3newfeature/5.ref.gif) -->
+<img :src="$withBase('/vue3newfeature/5.ref.gif')" alt="foo">
+
 
 可以看到，在对响应式数据的值进行 `+1` 操作后，视图改变了，原始值未改变，响应式数据对象的值也改变了，这说明 `ref` 是对原数据的一个**拷贝** ，不会影响到原始值，同时响应式数据对象值改变后会同步更新视图
 
 **toRef：** 
 
-![](/vue3newfeature/5.toref.gif)
+<!-- ![](/vue3newfeature/5.toref.gif) -->
+<img :src="$withBase('/vue3newfeature/5.toref.gif')" alt="foo">
+
 
 可以看到，在对响应式数据的值进行 `+1` 操作后，视图未发生改变，原始值改变了，响应式数据对象的值也改变了，这说明 `toRef` 是对原数据的一个**引用** ，会影响到原始值，但是响应式数据对象值改变后会不会更新视图
 
@@ -371,7 +378,8 @@ export default {
 
 打印结果如下：
 
-![torefs](/vue3newfeature/6.torefs.png)
+<!-- ![torefs](/vue3newfeature/6.torefs.png) -->
+<img :src="$withBase('/vue3newfeature/6.torefs.png')" alt="foo">
 
 返回的是一个对象，对象里包含了每一个包装过后的响应式数据对象
 
@@ -409,7 +417,8 @@ export default {
 
 来看一下打印结果：
 
-![shallowReactive](/vue3newfeature/7.shadowreact(1).png)
+<!-- ![shallowReactive](/vue3newfeature/7.shadowreact(1).png) -->
+<img :src="$withBase('/vue3newfeature/7.shadowreact(1).png')" alt="foo">
 
 设想一下如果一个对象层级比较深，那么每一层都用 `Proxy` 包装后，对于性能是非常不友好的
 
@@ -443,7 +452,9 @@ export default {
 
 输出结果：
 
-![shallowReactive](/vue3newfeature/7.shadowreact(2).png)
+<!-- ![shallowReactive](/vue3newfeature/7.shadowreact(2).png) -->
+<img :src="$withBase('/vue3newfeature/7.shadowreact(2).png')" alt="foo">
+
 
 结果非常的明了了，只有第一层被 `Proxy` 处理了，也就是说只有修改第一层的值时，才会响应式更新，代码如下：
 
@@ -490,7 +501,9 @@ export default {
 
 来看一下具体过程：
 
-![shallowReactive](/vue3newfeature/7.shadowreact.gif)
+<!-- ![shallowReactive](/vue3newfeature/7.shadowreact.gif) -->
+<img :src="$withBase('/vue3newfeature/7.shadowreact.gif')" alt="foo">
+
 
 首先我们点击了第二个按钮，改变了第二层的 `b` 和第三层的 `c`，虽然值发生了改变，但是视图却没有进行更新；
 
@@ -560,11 +573,13 @@ export default {
 ```
 首先看一下被 `shallowRef` 包装过后是怎样的结构
 
-![shallowRef](/vue3newfeature/8.shallowRef.png)
+<!-- ![shallowRef](/vue3newfeature/8.shallowRef.png) -->
+<img :src="$withBase('/vue3newfeature/8.shallowRef.png')" alt="foo">
 
 然后再来看看改变其值会有什么变化。
 
-![shallowRef](/vue3newfeature/8.shallowRef.gif)
+<!-- ![shallowRef](/vue3newfeature/8.shallowRef.gif) -->
+<img :src="$withBase('/vue3newfeature/8.shallowRef.gif')" alt="foo">
 
 我们先点击了第二个按钮，发现数据确实被改变了，但是视图并没随之更新；
 
@@ -616,7 +631,8 @@ export default {
 
 我们来看一下具体过程：
 
-![shallowRef](/vue3newfeature/8.shallowRef(2).gif)
+<!-- ![shallowRef](/vue3newfeature/8.shallowRef(2).gif) -->
+<img :src="$withBase('/vue3newfeature/8.shallowRef(2).gif')" alt="foo">
 
 可以看到，我们没有给 `.value` 重新赋值，只是在修改值后，调用了 `triggerRef` 就实现了视图的更新
 
@@ -659,7 +675,8 @@ export default {
 
 来看看具体过程
 
-![toRaw](/vue3newfeature/9.toraw.gif)
+<!-- ![toRaw](/vue3newfeature/9.toraw.gif) -->
+<img :src="$withBase('/vue3newfeature/9.toraw.gif')" alt="foo">
 
 我们改变了 `reactive` 对象中的数据，于是看到原始数据 `obj` 和被 `reactive` 包装过的对象的值都发生了变化，由此我们可以看出，这两者是一个引用关系
 
@@ -733,6 +750,8 @@ export default {
 
 我们来看一下在被 `markRaw` 方法处理过后的数据是否还能被 `reactive` 包装成响应式数据
 
-![markRaw](/vue3newfeature/10.gif)
+<!-- ![markRaw](/vue3newfeature/10.gif) -->
+<img :src="$withBase('/vue3newfeature/10.gif')" alt="foo">
+
 
 从图中可以看到，即使我们修改了值也不会更新视图了，即没有实现数据响应式。
