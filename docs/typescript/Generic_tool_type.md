@@ -1,10 +1,10 @@
 ---
 title: TS内置工具类型
-date: 2022-6-22
+date: 2022-10-22
 categories:
- - typescript
+ - TypeScript
 tags:
- - typescript
+ - TypeScript
 ---
 
 ::: tip 

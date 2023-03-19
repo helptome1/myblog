@@ -1,10 +1,10 @@
 ---
 title: TS的extends关键字
-date: 2022-6-22
+date: 2022-11-15
 categories:
- - typescript
+ - TypeScript
 tags:
- - typescript
+ - TypeScript
 ---
 
 ::: tip 

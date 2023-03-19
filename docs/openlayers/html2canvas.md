@@ -1,11 +1,16 @@
 ---
-title: JavaScript中的Map和Set
-date: 2022-4-15
+title: openlayers使用html2canvas生成图片空白问题
+date: 2022-07-11
 categories:
  - openlayers
 tags:
  - openlayers
 ---
+
+
+::: tip 
+js中Generator的使用openlayers使用html2canvas生成图片空白问题
+:::
 
 # openlayers使用html2canvas生成图片空白问题
 

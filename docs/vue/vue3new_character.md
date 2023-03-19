@@ -1,10 +1,10 @@
 ---
 title: vue3最新的15个常用API
-date: 2021-09-21
+date: 2022-09-21
 categories:
- - vue3
+ - Vue
 tags:
- - vue3
+ - Vue
 ---
 
 <!-- ::: warning 注意
