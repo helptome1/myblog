@@ -1,5 +1,5 @@
 ---
-title: JavaScript中的Map和Set
+title: Promise 并发控制
 date: 2023-04-17
 categories:
   - JavaScript
