@@ -129,6 +129,55 @@ app.use(async (ctx, next) => {
 })
 // 结果 123456
 ```
+#### 错误处理
+1. 一种是使用错误处理中间件`koa-onerror`来解决错误问题。
+```js
+const koa = require('koa');
+const onerror = require('koa-onerror');
+
+const app = new koa();
+
+// 404 Not Found
+app.use(async (ctx, next) => {
+    await next()
+    if (ctx.status === 404) {
+        ctx.throw(404)
+    }
+})
+
+// error handler
+onerror(app, {
+    accepts() {
+        return 'json';
+    },
+    json(err, ctx) {
+        ctx.body = {
+            code: ctx.status || 500,
+            msg: err.message
+        }
+    }
+})
+```
+1. 使用try...catch来实现错误处理
+```js
+// error handler
+app.use(async (ctx, next) => {
+  try {
+    await next()
+  } catch (err) {
+    ctx.status = err.statusCode || err.status || 500
+    ctx.body = {
+      code: ctx.status,
+      msg: err.message
+    }
+    ctx.app.emit('error', err, ctx)
+  }
+})
+// error logger
+app.on('error', err => {
+  console.log('server error', err)
+})
+```
 
 ### 上下文
 
