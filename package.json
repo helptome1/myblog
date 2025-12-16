@@ -5,8 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
