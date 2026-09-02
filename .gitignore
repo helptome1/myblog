@@ -2,3 +2,5 @@
 # 忽略dist文件夹及下面的文件
 /dist
 /docs/.vuepress/dist
+# macOS 系统文件
+.DS_Store
